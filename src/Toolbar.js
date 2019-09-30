@@ -11,31 +11,35 @@ class Toolbar extends React.Component {
     } = this.props
 
     return (
-      <div className="rbc-toolbar">
-        <span className="rbc-btn-group">
-          <button
-            type="button"
-            onClick={this.navigate.bind(null, navigate.TODAY)}
-          >
-            {messages.today}
-          </button>
-          <button
-            type="button"
-            onClick={this.navigate.bind(null, navigate.PREVIOUS)}
-          >
-            {messages.previous}
-          </button>
-          <button
-            type="button"
-            onClick={this.navigate.bind(null, navigate.NEXT)}
-          >
-            {messages.next}
-          </button>
-        </span>
+      <div>
+        <div className="rbc-toolbar-label-wrapper">
+          <span className="rbc-toolbar-label">{label}</span>
+        </div>
 
-        <span className="rbc-toolbar-label">{label}</span>
+        <div className="rbc-toolbar">
+          <span className="rbc-btn-group">
+            <button
+              type="button"
+              onClick={this.navigate.bind(null, navigate.TODAY)}
+            >
+              {messages.today}
+            </button>
+            <button
+              type="button"
+              onClick={this.navigate.bind(null, navigate.PREVIOUS)}
+            >
+              {messages.previous}
+            </button>
+            <button
+              type="button"
+              onClick={this.navigate.bind(null, navigate.NEXT)}
+            >
+              {messages.next}
+            </button>
+          </span>
 
-        <span className="rbc-btn-group">{this.viewNamesGroup(messages)}</span>
+          <span className="rbc-btn-group">{this.viewNamesGroup(messages)}</span>
+        </div>
       </div>
     )
   }
